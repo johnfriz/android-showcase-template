@@ -1,9 +1,29 @@
 {
   "version": 1,
-  "clusterName": "https://192.168.37.1:8443",
-  "namespace": "myproject",
-  "clientId": "app-android",
+  "clusterName": "https://master.mobsec.openshiftworkshop.com",
+  "namespace": "aerogear",
+  "clientId": "android-app-android",
   "services": [
-      ]
+    {
+      "id": "keycloak-android-app-android-public",
+      "name": "keycloak",
+      "type": "keycloak",
+      "url": "https://keycloak-aerogear.apps.mobsec.openshiftworkshop.com/auth",
+      "config": {
+        "auth-server-url": "https://keycloak-aerogear.apps.mobsec.openshiftworkshop.com/auth",
+        "confidential-port": 0,
+        "public-client": true,
+        "realm": "aerogear",
+        "resource": "android-app-android-public",
+        "ssl-required": "external"
+      }
+    },
+    {
+      "id": "metrics-android-app-android",
+      "name": "metrics",
+      "type": "metrics",
+      "url": "https://aerogear-app-metrics-aerogear.apps.mobsec.openshiftworkshop.com/metrics",
+      "config": {}
+    }
+  ]
 }
-
